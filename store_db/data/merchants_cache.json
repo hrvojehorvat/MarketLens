@@ -1,0 +1,67 @@
+{
+  "1": {
+    "specialties": [
+      "Apparel & Accessories"
+    ],
+    "size_tier": "medium"
+  },
+  "2": {
+    "specialties": [
+      "Apparel & Accessories"
+    ],
+    "size_tier": "medium"
+  },
+  "3": {
+    "specialties": [
+      "Sporting Goods"
+    ],
+    "size_tier": "small"
+  },
+  "4": {
+    "specialties": [
+      "Apparel & Accessories"
+    ],
+    "size_tier": "medium"
+  },
+  "5": {
+    "specialties": [
+      "Sporting Goods",
+      "Apparel & Accessories",
+      "Cameras & Optics"
+    ],
+    "size_tier": "medium"
+  },
+  "6": {
+    "specialties": [
+      "Cameras & Optics"
+    ],
+    "size_tier": "medium"
+  },
+  "7": {
+    "specialties": [
+      "Cameras & Optics"
+    ],
+    "size_tier": "large"
+  },
+  "8": {
+    "specialties": [
+      "Sporting Goods"
+    ],
+    "size_tier": "small"
+  },
+  "9": {
+    "specialties": [
+      "Electronics",
+      "Apparel & Accessories",
+      "Cameras & Optics"
+    ],
+    "size_tier": "medium"
+  },
+  "10": {
+    "specialties": [
+      "Apparel & Accessories",
+      "Electronics"
+    ],
+    "size_tier": "small"
+  }
+}
