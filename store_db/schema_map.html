@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Store Schema Map</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper: #f0efe9;
+    --paper-raised: #ffffff;
+    --ink: #20242c;
+    --ink-soft: #4a4d45;
+    --muted: #6e6d63;
+    --line: #d8d6cc;
+    --line-strong: #c3c1b4;
+    --accent: #a5702b;
+    --accent-soft: #e8c795;
+    --supply: #b14a3b;
+    --supply-soft: #ead3ce;
+    --demand: #2f6e62;
+    --demand-soft: #cfe0da;
+    --derived: #7c7a6e;
+    --radius: 10px;
+    --font-display: "Archivo", "Arial Narrow", sans-serif;
+    --font-body: "IBM Plex Sans", system-ui, sans-serif;
+    --font-mono: "IBM Plex Mono", "SF Mono", monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #1a1c20;
+      --paper-raised: #23262b;
+      --ink: #ece9e0;
+      --ink-soft: #b9b6aa;
+      --muted: #8f8c80;
+      --line: #3a3c3a;
+      --line-strong: #4b4d49;
+      --accent: #d9a255;
+      --accent-soft: #4a3a22;
+      --supply: #dd7f6c;
+      --supply-soft: #3a2b28;
+      --demand: #6cb0a1;
+      --demand-soft: #253330;
+      --derived: #9b988c;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper: #1a1c20;
+    --paper-raised: #23262b;
+    --ink: #ece9e0;
+    --ink-soft: #b9b6aa;
+    --muted: #8f8c80;
+    --line: #3a3c3a;
+    --line-strong: #4b4d49;
+    --accent: #d9a255;
+    --accent-soft: #4a3a22;
+    --supply: #dd7f6c;
+    --supply-soft: #3a2b28;
+    --demand: #6cb0a1;
+    --demand-soft: #253330;
+    --derived: #9b988c;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    margin: 0;
+  }
+
+  .page {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 56px 32px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 10px;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    letter-spacing: -0.01em;
+    margin: 0 0 16px;
+    text-wrap: balance;
+  }
+
+  .lede {
+    font-size: 1.05rem;
+    line-height: 1.65;
+    max-width: 68ch;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+  .lede strong { color: var(--ink); font-weight: 600; }
+  .lede code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 0.1em 0.35em;
+  }
+
+  /* ---- diagram ---- */
+
+  .diagram-scroll {
+    overflow-x: auto;
+    padding-bottom: 8px;
+    margin: 0 -32px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .diagram {
+    position: relative;
+    min-width: 1180px;
+    display: grid;
+    grid-template-columns: 220px 150px 220px 150px 220px 90px 220px;
+    column-gap: 0;
+    align-items: start;
+  }
+  /* columns: supply | gap | catalog | gap | demand | gap | outcomes */
+
+  #lines {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: visible;
+  }
+
+  #chips {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  .chip {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 2px 6px;
+    border-radius: 999px;
+    border: 1px solid var(--line-strong);
+    background: var(--paper);
+    color: var(--ink-soft);
+    white-space: nowrap;
+  }
+  .chip.derived { color: var(--derived); border-color: var(--derived); font-style: italic; }
+
+  .lane {
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    position: relative;
+    z-index: 1;
+  }
+  .lane[data-lane="supply"] { grid-column: 1; }
+  .lane[data-lane="catalog"] { grid-column: 3; }
+  .lane[data-lane="demand"] { grid-column: 5; }
+  .lane[data-lane="outcomes"] { grid-column: 7; }
+
+  .lane-head {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--line-strong);
+    margin-bottom: 4px;
+  }
+  .lane[data-lane="supply"] .lane-head { color: var(--supply); border-color: var(--supply); }
+  .lane[data-lane="catalog"] .lane-head { color: var(--ink); border-color: var(--accent); }
+  .lane[data-lane="demand"] .lane-head { color: var(--demand); border-color: var(--demand); }
+  .lane[data-lane="outcomes"] .lane-head { color: var(--ink-soft); border-color: var(--line-strong); }
+
+  .card {
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  }
+  .card-name {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+  .card-count {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--muted);
+    font-weight: 400;
+  }
+  .card-role {
+    font-size: 0.78rem;
+    line-height: 1.45;
+    color: var(--ink-soft);
+    margin: 0 0 10px;
+  }
+  .card-fields {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    line-height: 1.6;
+    color: var(--muted);
+    border-top: 1px dashed var(--line);
+    padding-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .card-fields .pk { color: var(--ink); }
+  .card-fields .fk { color: var(--accent); }
+
+  .card.anchor {
+    border-color: var(--accent);
+    border-width: 1.5px;
+    box-shadow: 0 2px 10px rgba(165,112,43,0.14);
+    position: relative;
+  }
+  .anchor-badge {
+    position: absolute;
+    top: -11px;
+    right: 14px;
+    background: var(--accent);
+    color: var(--paper-raised);
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 999px;
+  }
+
+  /* ---- legend / footer ---- */
+
+  .legend {
+    max-width: 74ch;
+    border-top: 1px solid var(--line);
+    padding-top: 36px;
+  }
+  .legend h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin: 0 0 14px;
+  }
+  .legend p {
+    line-height: 1.65;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    margin: 0 0 14px;
+  }
+  .legend-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+    margin-top: 18px;
+  }
+  .legend-item {
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 12px 14px;
+  }
+  .legend-item .k {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 0.82rem;
+    color: var(--ink);
+    display: block;
+    margin-bottom: 4px;
+  }
+  .legend-item .v {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .key-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 10px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--ink-soft);
+  }
+  .key-row span { display: inline-flex; align-items: center; gap: 6px; }
+  .swatch { width: 14px; height: 2px; display: inline-block; }
+  .swatch.fk { background: var(--accent); }
+  .swatch.derived-line { background: none; border-bottom: 2px dashed var(--derived); width: 16px; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .page { animation: rise 0.4s ease-out; }
+  }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+<main class="page">
+  <header>
+    <p class="eyebrow">store_db &middot; entity relationships</p>
+    <h1>Store Schema Map</h1>
+    <p class="lede">
+      Thirteen tables, one real anchor. <strong>products</strong> is the only table
+      sourced from real data (the 84-item catalog) &mdash; everything downstream of it
+      is generated, but never independently: every row is wired to the real catalog
+      or to a table generated before it.
+    </p>
+  </header>
+
+  <section class="diagram-scroll">
+    <div class="diagram" id="diagram">
+      <svg id="lines"><defs>
+        <marker id="arrow-fk" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="var(--accent)"></path>
+        </marker>
+        <marker id="arrow-derived" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="var(--derived)"></path>
+        </marker>
+      </defs></svg>
+      <div id="chips"></div>
+
+      <div class="lane" data-lane="supply">
+        <div class="lane-head">Supply</div>
+        <div class="card" id="card-merchants">
+          <div class="card-name">merchants <span class="card-count">10</span></div>
+          <p class="card-role">Suppliers we buy stock from &mdash; not competing sellers.</p>
+          <div class="card-fields"><span class="pk">id · PK</span><span>name, country</span></div>
+        </div>
+        <div class="card" id="card-consignments">
+          <div class="card-name">consignments <span class="card-count">40</span></div>
+          <p class="card-role">One stock delivery from one merchant.</p>
+          <div class="card-fields"><span class="pk">id · PK</span><span class="fk">merchant_id · FK</span><span>received_date</span></div>
+        </div>
+        <div class="card" id="card-consignment_items">
+          <div class="card-name">consignment_items <span class="card-count">86</span></div>
+          <p class="card-role">Line items of a delivery &mdash; sized by product popularity.</p>
+          <div class="card-fields"><span class="pk">id · PK</span><span class="fk">consignment_id · FK</span><span class="fk">product_upc · FK</span><span>quantity, unit_cost</span></div>
+        </div>
+      </div>
+
+      <div class="lane" data-lane="catalog">
+        <div class="lane-head">Catalog</div>
+        <div class="card anchor" id="card-products">
+          <span class="anchor-badge">real data</span>
+          <div class="card-name">products <span class="card-count">84</span></div>
+          <p class="card-role">The fixed anchor. Everything else hangs off this.</p>
+          <div class="card-fields"><span class="pk">upc · PK</span><span>title, brand, category_top</span></div>
+        </div>
+        <div class="card" id="card-inventory">
+          <div class="card-name">inventory <span class="card-count">84</span></div>
+          <p class="card-role">Running on-hand snapshot, maintained by orders &amp; reorders.</p>
+          <div class="card-fields"><span class="pk fk">product_upc · PK/FK</span><span>quantity_on_hand</span></div>
+        </div>
+        <div class="card" id="card-price_history">
+          <div class="card-name">price_history <span class="card-count">1008</span></div>
+          <p class="card-role">Monthly listed price &mdash; drift, seasonal &amp; clearance dips.</p>
+          <div class="card-fields"><span class="pk">id · PK</span><span class="fk">product_upc · FK</span><span>price, effective_from</span></div>
+        </div>
+      </div>
+
+      <div class="lane" data-lane="demand">
+        <div class="lane-head">Demand</div>
+        <div class="card" id="card-customers">
+          <div class="card-name">customers <span class="card-count">150</span></div>
+          <p class="card-role">Growth-curve signups, US/Canada-skewed geography.</p>
+          <div class="card-fields"><span class="pk">id · PK</span><span>full_name, country, created_at</span></div>
+        </div>
+        <div class="card" id="card-orders">
+          <div class="card-name">orders <span class="card-count">300</span></div>
+          <p class="card-role">Status tied to recency &amp; a simulated payment outcome.</p>
+          <div class="card-fields"><span class="pk">id · PK</span><span class="fk">customer_id · FK</span><span>order_date, status</span></div>
+        </div>
+        <div class="card" id="card-order_items">
+          <div class="card-name">order_items <span class="card-count">351</span></div>
+          <p class="card-role">Price looked up from price_history, never invented.</p>
+          <div class="card-fields"><span class="pk">id · PK</span><span class="fk">order_id · FK</span><span class="fk">product_upc · FK</span><span>quantity, unit_price</span></div>
+        </div>
+      </div>
+
+      <div class="lane" data-lane="outcomes">
+        <div class="lane-head">Outcomes</div>
+        <div class="card" id="card-payments">
+          <div class="card-name">payments <span class="card-count">300</span></div>
+          <p class="card-role">1:1 with orders. A failed attempt drives cancellation.</p>
+          <div class="card-fields"><span class="pk">id · PK</span><span class="fk">order_id · FK, unique</span><span>amount, status</span></div>
+        </div>
+        <div class="card" id="card-shipments">
+          <div class="card-name">shipments <span class="card-count">289</span></div>
+          <p class="card-role">Only once shipped/completed &mdash; 11 orders have none.</p>
+          <div class="card-fields"><span class="pk">id · PK</span><span class="fk">order_id · FK, unique</span><span>carrier, delivered_at</span></div>
+        </div>
+        <div class="card" id="card-returns">
+          <div class="card-name">returns <span class="card-count">33</span></div>
+          <p class="card-role">Boosted by a price drop right after purchase.</p>
+          <div class="card-fields"><span class="pk">id · PK</span><span class="fk">order_item_id · FK</span><span>reason, refund_amount</span></div>
+        </div>
+        <div class="card" id="card-reviews">
+          <div class="card-name">reviews <span class="card-count">132</span></div>
+          <p class="card-role">Rating skews low if the item was returned.</p>
+          <div class="card-fields"><span class="pk">id · PK</span><span class="fk">customer_id · FK</span><span class="fk">product_upc · FK</span><span>rating, review_text</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="legend">
+    <h2>What's deliberately <em>not</em> in any table</h2>
+    <p>
+      A few generation-time traits drive the simulation &mdash; a product's
+      <code>popularity_weight</code> &amp; price <code>elasticity</code>, a merchant's
+      category specialty, a customer's <code>activity_weight</code> &amp; buyer segment
+      &mdash; but none of them is a column. They're meant to be <em>inferred</em> from
+      the resulting data later (the way a real analyst would), not read off a label.
+    </p>
+    <div class="legend-grid">
+      <div class="legend-item"><span class="k">popularity_weight / elasticity</span><span class="v">Per product. ~15% of products are deliberately price-insensitive or inverted &mdash; a known anomaly population.</span></div>
+      <div class="legend-item"><span class="k">merchant specialty / size tier</span><span class="v">Per merchant. Inferable later from what it actually ships in consignment_items.</span></div>
+      <div class="legend-item"><span class="k">activity_weight / segment</span><span class="v">Per customer. Deal-seekers buy disproportionately in price-dip months.</span></div>
+    </div>
+    <div class="key-row">
+      <span><span class="swatch fk"></span> foreign key</span>
+      <span><span class="swatch derived-line"></span> derived, not a FK (price lookup)</span>
+    </div>
+  </footer>
+</main>
+
+<script>
+  (function () {
+    var diagram = document.getElementById('diagram');
+    var svg = document.getElementById('lines');
+    var chips = document.getElementById('chips');
+
+    var connections = [
+      { from: 'card-merchants', to: 'card-consignments', fromSide: 'bottom', toSide: 'top', type: 'fk', label: '1:N' },
+      { from: 'card-consignments', to: 'card-consignment_items', fromSide: 'bottom', toSide: 'top', type: 'fk', label: '1:N' },
+      { from: 'card-consignment_items', to: 'card-products', fromSide: 'right', toSide: 'left', type: 'fk', label: 'N:1' },
+      { from: 'card-products', to: 'card-inventory', fromSide: 'bottom', toSide: 'top', type: 'fk', label: '1:1' },
+      { from: 'card-inventory', to: 'card-price_history', fromSide: 'bottom', toSide: 'top', type: 'fk', label: '1:N' },
+      { from: 'card-customers', to: 'card-orders', fromSide: 'bottom', toSide: 'top', type: 'fk', label: '1:N' },
+      { from: 'card-orders', to: 'card-order_items', fromSide: 'bottom', toSide: 'top', type: 'fk', label: '1:N' },
+      { from: 'card-order_items', to: 'card-products', fromSide: 'left', toSide: 'right', type: 'fk', label: 'N:1', curve: 'down' },
+      { from: 'card-price_history', to: 'card-order_items', fromSide: 'right', toSide: 'left', type: 'derived', label: 'price lookup', curve: 'down' },
+      { from: 'card-orders', to: 'card-payments', fromSide: 'right', toSide: 'left', type: 'fk', label: '1:1' },
+      { from: 'card-order_items', to: 'card-shipments', fromSide: 'right', toSide: 'left', type: 'fk', label: '1:0/1' },
+      { from: 'card-order_items', to: 'card-returns', fromSide: 'right', toSide: 'left', type: 'fk', label: '1:0/1' },
+      { from: 'card-customers', to: 'card-reviews', fromSide: 'right', toSide: 'left', type: 'fk', label: '1:N', curve: 'up' },
+      { from: 'card-reviews', to: 'card-products', fromSide: 'top', toSide: 'top', type: 'fk', label: 'N:1', curve: 'arc' }
+    ];
+
+    function anchor(el, side, containerRect) {
+      var r = el.getBoundingClientRect();
+      var x, y;
+      if (side === 'top') { x = r.left + r.width / 2; y = r.top; }
+      else if (side === 'bottom') { x = r.left + r.width / 2; y = r.bottom; }
+      else if (side === 'left') { x = r.left; y = r.top + r.height / 2; }
+      else { x = r.right; y = r.top + r.height / 2; }
+      return { x: x - containerRect.left, y: y - containerRect.top };
+    }
+
+    function cubicPoint(p0, p1, p2, p3, t) {
+      var mt = 1 - t;
+      var x = mt*mt*mt*p0.x + 3*mt*mt*t*p1.x + 3*mt*t*t*p2.x + t*t*t*p3.x;
+      var y = mt*mt*mt*p0.y + 3*mt*mt*t*p1.y + 3*mt*t*t*p2.y + t*t*t*p3.y;
+      return { x: x, y: y };
+    }
+
+    function draw() {
+      var rect = diagram.getBoundingClientRect();
+      svg.setAttribute('width', rect.width);
+      svg.setAttribute('height', rect.height);
+      svg.setAttribute('viewBox', '0 0 ' + rect.width + ' ' + rect.height);
+
+      while (svg.childNodes.length > 1) svg.removeChild(svg.lastChild);
+      chips.innerHTML = '';
+
+      connections.forEach(function (c) {
+        var fromEl = document.getElementById(c.from);
+        var toEl = document.getElementById(c.to);
+        if (!fromEl || !toEl) return;
+        var p0 = anchor(fromEl, c.fromSide, rect);
+        var p3 = anchor(toEl, c.toSide, rect);
+
+        var c1, c2;
+        if (c.curve === 'arc') {
+          var liftY = Math.min(p0.y, p3.y) - 70;
+          c1 = { x: p0.x, y: liftY };
+          c2 = { x: p3.x, y: liftY };
+        } else if (c.curve === 'down') {
+          var dropY = Math.max(p0.y, p3.y) + 46;
+          c1 = { x: p0.x - 40, y: dropY };
+          c2 = { x: p3.x + 40, y: dropY };
+        } else if (c.curve === 'up') {
+          var midY = (p0.y + p3.y) / 2;
+          c1 = { x: p0.x + 50, y: p0.y };
+          c2 = { x: p3.x - 50, y: midY };
+        } else if (c.fromSide === 'bottom' && c.toSide === 'top') {
+          var midY2 = (p0.y + p3.y) / 2;
+          c1 = { x: p0.x, y: midY2 };
+          c2 = { x: p3.x, y: midY2 };
+        } else {
+          var midX = (p0.x + p3.x) / 2;
+          c1 = { x: midX, y: p0.y };
+          c2 = { x: midX, y: p3.y };
+        }
+
+        var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        var d = 'M ' + p0.x + ' ' + p0.y + ' C ' + c1.x + ' ' + c1.y + ', ' + c2.x + ' ' + c2.y + ', ' + p3.x + ' ' + p3.y;
+        path.setAttribute('d', d);
+        path.setAttribute('fill', 'none');
+        var isDerived = c.type === 'derived';
+        path.setAttribute('stroke', isDerived ? 'var(--derived)' : 'var(--accent)');
+        path.setAttribute('stroke-width', isDerived ? '1.3' : '1.6');
+        if (isDerived) path.setAttribute('stroke-dasharray', '4 4');
+        path.setAttribute('marker-end', isDerived ? 'url(#arrow-derived)' : 'url(#arrow-fk)');
+        path.setAttribute('opacity', '0.85');
+        svg.appendChild(path);
+
+        var mid = cubicPoint(p0, c1, c2, p3, 0.5);
+        var chip = document.createElement('div');
+        chip.className = 'chip' + (isDerived ? ' derived' : '');
+        chip.textContent = c.label;
+        chip.style.left = mid.x + 'px';
+        chip.style.top = mid.y + 'px';
+        chips.appendChild(chip);
+      });
+    }
+
+    window.addEventListener('resize', draw);
+    window.addEventListener('load', draw);
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(draw);
+    }
+    draw();
+    setTimeout(draw, 200);
+  })();
+</script>
+</body>
+</html>
