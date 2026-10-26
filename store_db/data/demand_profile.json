@@ -1,422 +1,1422 @@
 {
-  "097855135810": {
+  "020201306244": {
     "popularity_weight": 1.2470661436805972,
     "elasticity": 1.1794582548529986,
     "group": "normal"
   },
-  "600138932985": {
+  "020201333233": {
     "popularity_weight": 3.093512998799263,
     "elasticity": -0.08261223347411678,
     "group": "insensitive"
   },
-  "600138934033": {
+  "027242872004": {
     "popularity_weight": 0.8831562358665841,
     "elasticity": 1.659103989775716,
     "group": "normal"
   },
-  "603042479058": {
+  "029521842333": {
     "popularity_weight": 1.6628702834089752,
     "elasticity": 1.8017516625890448,
     "group": "normal"
   },
-  "603042479065": {
+  "044476115561": {
     "popularity_weight": 4.778959861376015,
     "elasticity": 1.0643151496800287,
     "group": "normal"
   },
-  "605620888351": {
+  "044476115585": {
     "popularity_weight": 2.8982110784284116,
     "elasticity": 0.9644178406168888,
     "group": "normal"
   },
-  "610214633491": {
+  "044476115592": {
     "popularity_weight": 3.872570062613238,
     "elasticity": 2.0405440373794903,
     "group": "normal"
   },
-  "616960058793": {
+  "058465796570": {
     "popularity_weight": 8.009250926283423,
     "elasticity": 1.7384690731644858,
     "group": "normal"
   },
-  "616960066545": {
+  "058465796587": {
     "popularity_weight": 3.7931929105291777,
     "elasticity": 0.015470429051352402,
     "group": "insensitive"
   },
-  "616960125815": {
+  "058465800932": {
     "popularity_weight": 1.392391414668819,
     "elasticity": 1.2919595381235822,
     "group": "normal"
   },
-  "634563138513": {
+  "058465800949": {
     "popularity_weight": 0.42927807298384274,
     "elasticity": 1.2725551252871568,
     "group": "normal"
   },
-  "648412524426": {
+  "058465801076": {
     "popularity_weight": 1.390722896169204,
     "elasticity": 1.1561619523115292,
     "group": "normal"
   },
-  "681131159623": {
+  "058465802318": {
     "popularity_weight": 1.7945528006688463,
     "elasticity": 2.0395155565155934,
     "group": "normal"
   },
-  "689309013746": {
+  "085896392170": {
     "popularity_weight": 0.4327966843105472,
     "elasticity": -1.0400003602188608,
     "group": "inverted"
   },
-  "703558783806": {
+  "091037425195": {
     "popularity_weight": 1.3215406347198717,
     "elasticity": 2.1191998496286164,
     "group": "normal"
   },
-  "703558783813": {
+  "092636282608": {
     "popularity_weight": 0.6776536792781356,
     "elasticity": 2.4029465143695923,
     "group": "normal"
   },
-  "703558783820": {
+  "092636283636": {
     "popularity_weight": 2.3347986357974237,
     "elasticity": 1.4725742318031294,
     "group": "normal"
   },
-  "703558783837": {
+  "092636283643": {
     "popularity_weight": 3.2633851401422724,
     "elasticity": 1.219266763079772,
     "group": "normal"
   },
-  "703558783844": {
+  "092636283650": {
     "popularity_weight": 1.1371417208535342,
     "elasticity": 2.326298902124211,
     "group": "normal"
   },
-  "703558783851": {
+  "092636283667": {
     "popularity_weight": 0.8195835551079693,
     "elasticity": -1.2357105594853033,
     "group": "inverted"
   },
-  "703558783868": {
+  "094664029859": {
     "popularity_weight": 0.19834829764011064,
     "elasticity": 1.517671943559463,
     "group": "normal"
   },
-  "703558783875": {
+  "094664029866": {
     "popularity_weight": 0.3362886352357587,
     "elasticity": -1.2063284823512945,
     "group": "inverted"
   },
-  "703558783882": {
+  "095673855286": {
     "popularity_weight": 1.832927160182621,
     "elasticity": 1.8896350575856737,
     "group": "normal"
   },
-  "703558783899": {
+  "095673856269": {
     "popularity_weight": 0.34608524297734405,
     "elasticity": 2.4214870767858363,
     "group": "normal"
   },
-  "703558783905": {
+  "095673856917": {
     "popularity_weight": 2.1985705047031385,
     "elasticity": 1.1037081969012235,
     "group": "normal"
   },
-  "703558783912": {
+  "095673856962": {
     "popularity_weight": 0.4223509166293638,
     "elasticity": 1.0598267565343793,
     "group": "normal"
   },
-  "703558783929": {
+  "095673857464": {
     "popularity_weight": 2.4107094949270835,
     "elasticity": 1.7016012427318017,
     "group": "normal"
   },
-  "703558783936": {
+  "095673862901": {
     "popularity_weight": 0.7294482544197097,
     "elasticity": 0.08938988905959883,
     "group": "insensitive"
   },
-  "703558783943": {
+  "095673862918": {
     "popularity_weight": 0.2880536198506272,
     "elasticity": 2.0930236809372937,
     "group": "normal"
   },
-  "703558783950": {
+  "095673862932": {
     "popularity_weight": 1.6014371360524813,
     "elasticity": 1.7346661089414046,
     "group": "normal"
   },
-  "703558783967": {
+  "095673862949": {
     "popularity_weight": 0.8602245476242221,
     "elasticity": 2.0408828174529594,
     "group": "normal"
   },
-  "703558783974": {
+  "095673862963": {
     "popularity_weight": 0.5115114512924505,
     "elasticity": -1.0251829135408197,
     "group": "inverted"
   },
-  "703558783981": {
+  "095673862970": {
     "popularity_weight": 0.8202815347642971,
     "elasticity": 1.1819854729536474,
     "group": "normal"
   },
-  "703558783998": {
+  "095673863069": {
     "popularity_weight": 0.5448573146412372,
     "elasticity": 1.1743695535676513,
     "group": "normal"
   },
-  "703558784001": {
+  "095673863779": {
     "popularity_weight": 0.16603481925859082,
     "elasticity": 2.3392140221104176,
     "group": "normal"
   },
-  "703558784018": {
+  "095673864363": {
     "popularity_weight": 0.29463572350948714,
     "elasticity": 1.0249301428325426,
     "group": "normal"
   },
-  "703558784025": {
+  "097855135810": {
     "popularity_weight": 4.795017076069766,
     "elasticity": 2.133853021294281,
     "group": "normal"
   },
-  "703558784032": {
+  "190199220454": {
     "popularity_weight": 1.7975591283240224,
     "elasticity": 1.5327870100908418,
     "group": "normal"
   },
-  "703558784049": {
+  "190576903369": {
     "popularity_weight": 0.8014081522826483,
     "elasticity": 1.9447197303986126,
     "group": "normal"
   },
-  "703558784056": {
+  "190576903536": {
     "popularity_weight": 0.7964722131502415,
     "elasticity": -0.05026873321594288,
     "group": "insensitive"
   },
-  "703558784063": {
+  "193575012353": {
     "popularity_weight": 0.42001398677442553,
     "elasticity": 1.2735267459337989,
     "group": "normal"
   },
-  "703558784070": {
+  "3760071190075": {
     "popularity_weight": 0.5308482648986476,
     "elasticity": 0.8860001601922981,
     "group": "normal"
   },
-  "703558784087": {
+  "424895580124": {
     "popularity_weight": 1.9074694356208837,
     "elasticity": 1.1633704086386087,
     "group": "normal"
   },
-  "705548236989": {
+  "4894461799780": {
     "popularity_weight": 0.850179030718411,
     "elasticity": 2.475025034425534,
     "group": "normal"
   },
-  "721535836376": {
+  "5991369522393": {
     "popularity_weight": 0.18658191693361403,
     "elasticity": 1.5191127261832769,
     "group": "normal"
   },
-  "765150782830": {
+  "600138932985": {
     "popularity_weight": 1.3576825185107382,
     "elasticity": 1.3044033033407592,
     "group": "normal"
   },
-  "765150783523": {
+  "600138934033": {
     "popularity_weight": 1.2949862428643655,
     "elasticity": 1.793101910580251,
     "group": "normal"
   },
-  "770913589830": {
+  "603042479058": {
     "popularity_weight": 1.030332218272163,
     "elasticity": 2.433324135566566,
     "group": "normal"
   },
-  "770913590935": {
+  "603042479065": {
     "popularity_weight": 0.45101128197336793,
     "elasticity": 1.9478613411269532,
     "group": "normal"
   },
-  "798711873036": {
+  "605620888351": {
     "popularity_weight": 0.6284307600065,
     "elasticity": -0.05075693044227503,
     "group": "insensitive"
   },
-  "798711873043": {
+  "610214632630": {
     "popularity_weight": 1.467288258717776,
     "elasticity": 1.7922428917950821,
     "group": "normal"
   },
-  "798711873050": {
+  "610214633491": {
     "popularity_weight": 1.7138353549460408,
     "elasticity": 2.0175260613420054,
     "group": "normal"
   },
-  "798711873074": {
+  "610214635310": {
     "popularity_weight": 0.5128626157501929,
     "elasticity": 1.3099950356578958,
     "group": "normal"
   },
-  "798711873081": {
+  "610214637277": {
     "popularity_weight": 0.3186054783382419,
     "elasticity": 1.5790853884515963,
     "group": "normal"
   },
-  "798711873098": {
+  "610214637321": {
     "popularity_weight": 0.4328508262541465,
     "elasticity": 2.3865409425893054,
     "group": "normal"
   },
-  "798711873104": {
+  "616960058793": {
     "popularity_weight": 0.7872761519367335,
     "elasticity": 1.9960178726485307,
     "group": "normal"
   },
-  "798711873111": {
+  "616960066545": {
     "popularity_weight": 2.0113569649068412,
     "elasticity": 2.396181006676077,
     "group": "normal"
   },
-  "798711873128": {
+  "616960067917": {
     "popularity_weight": 0.25717212096952385,
     "elasticity": 1.8282107059513806,
     "group": "normal"
   },
-  "798711873135": {
+  "616960125815": {
     "popularity_weight": 1.524828232800239,
     "elasticity": 1.2487726327716961,
     "group": "normal"
   },
-  "798711873142": {
+  "616960296126": {
     "popularity_weight": 0.8294046820957984,
     "elasticity": 0.9569073951116469,
     "group": "normal"
   },
-  "798711873166": {
+  "616960297680": {
     "popularity_weight": 0.8494784692501194,
     "elasticity": 2.110902679133366,
     "group": "normal"
   },
-  "841631120695": {
+  "616960331988": {
     "popularity_weight": 1.3322090087687446,
     "elasticity": 1.737856715914865,
     "group": "normal"
   },
-  "853207006432": {
+  "616960333432": {
     "popularity_weight": 0.8933831343834225,
     "elasticity": 2.301280868610243,
     "group": "normal"
   },
-  "859109020224": {
+  "616960334682": {
     "popularity_weight": 3.945012857593811,
     "elasticity": 1.7902662630326498,
     "group": "normal"
   },
-  "859109020231": {
+  "616960334699": {
     "popularity_weight": 0.5364971932227639,
     "elasticity": 2.328268530862403,
     "group": "normal"
   },
-  "859109020248": {
+  "616960334729": {
     "popularity_weight": 2.1808906420252816,
     "elasticity": 0.9747491568420357,
     "group": "normal"
   },
-  "859109020255": {
+  "616960337034": {
     "popularity_weight": 0.6831364608916728,
     "elasticity": 2.380797726679247,
     "group": "normal"
   },
-  "859109020279": {
+  "616960358541": {
     "popularity_weight": 1.9239532195841864,
     "elasticity": 0.9837625648850271,
     "group": "normal"
   },
-  "859109020378": {
+  "616960366317": {
     "popularity_weight": 0.09666010388473067,
     "elasticity": 1.318824474475621,
     "group": "normal"
   },
-  "859109020415": {
+  "616960367185": {
     "popularity_weight": 1.8046597829376672,
     "elasticity": 1.1283206401571046,
     "group": "normal"
   },
-  "859109020422": {
+  "616960367499": {
     "popularity_weight": 0.141596567213426,
     "elasticity": -1.5813125109171928,
     "group": "inverted"
   },
-  "859109020477": {
+  "634563138513": {
     "popularity_weight": 1.4388997064734734,
     "elasticity": -1.1956764012819172,
     "group": "inverted"
   },
-  "859109020484": {
+  "639131201453": {
     "popularity_weight": 2.6438544384963825,
     "elasticity": 1.5387583895598955,
     "group": "normal"
   },
-  "859109020491": {
+  "639131221505": {
     "popularity_weight": 1.6722044517113952,
     "elasticity": 1.6694192014381128,
     "group": "normal"
   },
-  "859109020507": {
+  "641753266017": {
     "popularity_weight": 0.6579438107343561,
     "elasticity": 2.00493498251809,
     "group": "normal"
   },
-  "859109020514": {
+  "648412524426": {
     "popularity_weight": 1.2356548890060046,
     "elasticity": 1.9400684575360991,
     "group": "normal"
   },
-  "859109020521": {
+  "652810518062": {
     "popularity_weight": 0.7981876506971357,
     "elasticity": 1.361340061272414,
     "group": "normal"
   },
-  "859109020545": {
+  "652810518222": {
     "popularity_weight": 0.15101370234091588,
     "elasticity": 1.310547855959149,
     "group": "normal"
   },
-  "859109020576": {
+  "652810518246": {
     "popularity_weight": 0.6079099578590386,
     "elasticity": 1.30261384429411,
     "group": "normal"
   },
-  "859109020606": {
+  "652810816571": {
     "popularity_weight": 0.37048822483030674,
     "elasticity": 0.03546358905454658,
     "group": "insensitive"
   },
-  "859109020613": {
+  "652810818025": {
     "popularity_weight": 5.040697105461182,
     "elasticity": 1.731493262330687,
     "group": "normal"
   },
-  "859109020620": {
+  "652810818032": {
     "popularity_weight": 0.772803086770271,
     "elasticity": 1.5904799234199243,
     "group": "normal"
   },
-  "859109021139": {
+  "652810819947": {
     "popularity_weight": 0.8926372914296031,
     "elasticity": 2.3320074039080323,
     "group": "normal"
   },
-  "889063505369": {
+  "652810833462": {
     "popularity_weight": 1.7340570822673145,
     "elasticity": 1.676268416855868,
+    "group": "normal"
+  },
+  "652810833950": {
+    "popularity_weight": 1.3617152010374853,
+    "elasticity": 2.076934833819245,
+    "group": "normal"
+  },
+  "681131159623": {
+    "popularity_weight": 1.4107034117942563,
+    "elasticity": 0.8415231591356048,
+    "group": "normal"
+  },
+  "681181621446": {
+    "popularity_weight": 0.47208855047083836,
+    "elasticity": 0.9238079896137675,
+    "group": "normal"
+  },
+  "681441228507": {
+    "popularity_weight": 0.6999101461015302,
+    "elasticity": 1.9838022258338583,
+    "group": "normal"
+  },
+  "689309013746": {
+    "popularity_weight": 0.9885824377258569,
+    "elasticity": 0.8094261908346541,
+    "group": "normal"
+  },
+  "6921815608516": {
+    "popularity_weight": 5.392701942942399,
+    "elasticity": 1.522748529702648,
+    "group": "normal"
+  },
+  "6922309813591": {
+    "popularity_weight": 1.0296225802924222,
+    "elasticity": 2.242171790497822,
+    "group": "normal"
+  },
+  "694202128480": {
+    "popularity_weight": 0.7128338530310769,
+    "elasticity": 2.4794171702129617,
+    "group": "normal"
+  },
+  "701107493619": {
+    "popularity_weight": 19.103214880862158,
+    "elasticity": 0.022530464552352567,
+    "group": "insensitive"
+  },
+  "701107493985": {
+    "popularity_weight": 1.981075969268234,
+    "elasticity": 1.7313823160384083,
+    "group": "normal"
+  },
+  "703558783806": {
+    "popularity_weight": 0.9485859053284234,
+    "elasticity": 1.8840244425194657,
+    "group": "normal"
+  },
+  "703558783813": {
+    "popularity_weight": 2.356887287557903,
+    "elasticity": 1.266815659759815,
+    "group": "normal"
+  },
+  "703558783820": {
+    "popularity_weight": 0.4011920981739101,
+    "elasticity": 1.343506266311896,
+    "group": "normal"
+  },
+  "703558783837": {
+    "popularity_weight": 1.0746016640300555,
+    "elasticity": 1.979714680908389,
+    "group": "normal"
+  },
+  "703558783844": {
+    "popularity_weight": 1.405764281120442,
+    "elasticity": 1.722438938856656,
+    "group": "normal"
+  },
+  "703558783851": {
+    "popularity_weight": 0.8487812770049447,
+    "elasticity": 2.338225413178301,
+    "group": "normal"
+  },
+  "703558783868": {
+    "popularity_weight": 1.5316705358658176,
+    "elasticity": 0.053118915223613894,
+    "group": "insensitive"
+  },
+  "703558783875": {
+    "popularity_weight": 0.3951742682460203,
+    "elasticity": 0.09068606769402127,
+    "group": "insensitive"
+  },
+  "703558783882": {
+    "popularity_weight": 0.6094517236059354,
+    "elasticity": 1.8255294012001102,
+    "group": "normal"
+  },
+  "703558783899": {
+    "popularity_weight": 0.575353159938121,
+    "elasticity": 0.8493421939094159,
+    "group": "normal"
+  },
+  "703558783905": {
+    "popularity_weight": 0.4545044523919108,
+    "elasticity": 1.080576043045965,
+    "group": "normal"
+  },
+  "703558783912": {
+    "popularity_weight": 0.943919107314112,
+    "elasticity": 0.8458429682387341,
+    "group": "normal"
+  },
+  "703558783929": {
+    "popularity_weight": 0.6868522688222746,
+    "elasticity": 1.8926744016158707,
+    "group": "normal"
+  },
+  "703558783936": {
+    "popularity_weight": 0.3517272609465455,
+    "elasticity": 1.4444765691198374,
+    "group": "normal"
+  },
+  "703558783943": {
+    "popularity_weight": 0.5161549885784271,
+    "elasticity": 1.4445145664590318,
+    "group": "normal"
+  },
+  "703558783950": {
+    "popularity_weight": 10.125018440684647,
+    "elasticity": 0.9392405956947923,
+    "group": "normal"
+  },
+  "703558783967": {
+    "popularity_weight": 2.8853916188379336,
+    "elasticity": 2.082196446901195,
+    "group": "normal"
+  },
+  "703558783974": {
+    "popularity_weight": 0.17448066604585047,
+    "elasticity": 1.1705397195410563,
+    "group": "normal"
+  },
+  "703558783981": {
+    "popularity_weight": 3.7478308859656155,
+    "elasticity": 1.832320739614584,
+    "group": "normal"
+  },
+  "703558783998": {
+    "popularity_weight": 1.5408034919883509,
+    "elasticity": 2.440025314157949,
+    "group": "normal"
+  },
+  "703558784001": {
+    "popularity_weight": 0.40663787330137874,
+    "elasticity": -1.4050183377250591,
+    "group": "inverted"
+  },
+  "703558784018": {
+    "popularity_weight": 1.4322998694625682,
+    "elasticity": 1.8663120725217757,
+    "group": "normal"
+  },
+  "703558784025": {
+    "popularity_weight": 3.8709610435887334,
+    "elasticity": 2.4725353975749416,
+    "group": "normal"
+  },
+  "703558784032": {
+    "popularity_weight": 1.9512711686838045,
+    "elasticity": 1.4299704895706955,
+    "group": "normal"
+  },
+  "703558784049": {
+    "popularity_weight": 1.0140685131932077,
+    "elasticity": 2.1979625607530986,
+    "group": "normal"
+  },
+  "703558784056": {
+    "popularity_weight": 3.3943720700158675,
+    "elasticity": 1.5403281465130512,
+    "group": "normal"
+  },
+  "703558784063": {
+    "popularity_weight": 0.15710967018488792,
+    "elasticity": 1.6219457566014335,
+    "group": "normal"
+  },
+  "703558784070": {
+    "popularity_weight": 0.6908599934896167,
+    "elasticity": 2.2479123720328644,
+    "group": "normal"
+  },
+  "703558784087": {
+    "popularity_weight": 2.1798644203802215,
+    "elasticity": 1.837563897191885,
+    "group": "normal"
+  },
+  "705548236989": {
+    "popularity_weight": 0.8250113235101719,
+    "elasticity": -0.06363202856846165,
+    "group": "insensitive"
+  },
+  "705548237405": {
+    "popularity_weight": 0.11096169989660637,
+    "elasticity": 2.296543965588983,
+    "group": "normal"
+  },
+  "705548238396": {
+    "popularity_weight": 1.5360221652618402,
+    "elasticity": 2.4117063822209532,
+    "group": "normal"
+  },
+  "705826096588": {
+    "popularity_weight": 0.9296717975184057,
+    "elasticity": 1.8980349295596188,
+    "group": "normal"
+  },
+  "711181810400": {
+    "popularity_weight": 0.9338496941313676,
+    "elasticity": 1.1767138808033013,
+    "group": "normal"
+  },
+  "713331205395": {
+    "popularity_weight": 1.5323534623235682,
+    "elasticity": 1.6045428308911922,
+    "group": "normal"
+  },
+  "721535836376": {
+    "popularity_weight": 1.0866543556569002,
+    "elasticity": 1.3623452052330811,
+    "group": "normal"
+  },
+  "723755002234": {
+    "popularity_weight": 1.5366188324664223,
+    "elasticity": 1.0051150040789198,
+    "group": "normal"
+  },
+  "723755006386": {
+    "popularity_weight": 0.5832768543657326,
+    "elasticity": 2.095722336122975,
+    "group": "normal"
+  },
+  "723755008892": {
+    "popularity_weight": 0.5377527716860779,
+    "elasticity": 2.0317945018581876,
+    "group": "normal"
+  },
+  "723755009219": {
+    "popularity_weight": 4.702127860119575,
+    "elasticity": 0.9708943837543443,
+    "group": "normal"
+  },
+  "723755009271": {
+    "popularity_weight": 0.5426201988402412,
+    "elasticity": 0.8240522243353086,
+    "group": "normal"
+  },
+  "723755009691": {
+    "popularity_weight": 1.0753280794358373,
+    "elasticity": -1.1699615498020877,
+    "group": "inverted"
+  },
+  "723755009707": {
+    "popularity_weight": 1.4174529749619738,
+    "elasticity": -0.0018242610952442229,
+    "group": "insensitive"
+  },
+  "723755010062": {
+    "popularity_weight": 3.8615633029126726,
+    "elasticity": 1.5487969568312174,
+    "group": "normal"
+  },
+  "723755011106": {
+    "popularity_weight": 3.6836507423653986,
+    "elasticity": 1.4812026518282977,
+    "group": "normal"
+  },
+  "723755134003": {
+    "popularity_weight": 0.16954172583424448,
+    "elasticity": 1.0536358936052137,
+    "group": "normal"
+  },
+  "723755138759": {
+    "popularity_weight": 1.149546583361833,
+    "elasticity": -1.8223226566828077,
+    "group": "inverted"
+  },
+  "723755139503": {
+    "popularity_weight": 2.821067901285352,
+    "elasticity": 1.183668133010559,
+    "group": "normal"
+  },
+  "736832591125": {
+    "popularity_weight": 1.065480172367661,
+    "elasticity": 2.262283331904506,
+    "group": "normal"
+  },
+  "736832597974": {
+    "popularity_weight": 1.613947892715105,
+    "elasticity": 2.4109033405531424,
+    "group": "normal"
+  },
+  "738759764842": {
+    "popularity_weight": 0.5644852464345858,
+    "elasticity": 1.066997058747491,
+    "group": "normal"
+  },
+  "738759765177": {
+    "popularity_weight": 1.2267464292710262,
+    "elasticity": 2.0018249107943564,
+    "group": "normal"
+  },
+  "758302640904": {
+    "popularity_weight": 1.7754248325727893,
+    "elasticity": 2.3706487756203325,
+    "group": "normal"
+  },
+  "758302647255": {
+    "popularity_weight": 3.271498299157341,
+    "elasticity": 2.3872363793573728,
+    "group": "normal"
+  },
+  "758302647286": {
+    "popularity_weight": 0.7758580356986082,
+    "elasticity": 2.3442994568614304,
+    "group": "normal"
+  },
+  "765150782830": {
+    "popularity_weight": 0.4747496178641114,
+    "elasticity": 1.7676519838424571,
+    "group": "normal"
+  },
+  "765150783523": {
+    "popularity_weight": 0.6888509580670489,
+    "elasticity": 1.9895472644587195,
+    "group": "normal"
+  },
+  "770913589830": {
+    "popularity_weight": 3.9284863852913574,
+    "elasticity": 0.9367511482288117,
+    "group": "normal"
+  },
+  "770913590935": {
+    "popularity_weight": 0.2862631367681368,
+    "elasticity": 1.2256254341004067,
+    "group": "normal"
+  },
+  "781420033112": {
+    "popularity_weight": 3.3908145614503007,
+    "elasticity": -0.500641374683823,
+    "group": "inverted"
+  },
+  "793943259047": {
+    "popularity_weight": 1.439272157850488,
+    "elasticity": 2.085657011701347,
+    "group": "normal"
+  },
+  "793943259054": {
+    "popularity_weight": 0.8774853063555892,
+    "elasticity": -0.06370217055537482,
+    "group": "insensitive"
+  },
+  "793943259078": {
+    "popularity_weight": 1.4343867290506935,
+    "elasticity": 0.9551120906995063,
+    "group": "normal"
+  },
+  "793943259092": {
+    "popularity_weight": 0.7032074638553469,
+    "elasticity": 2.2581462604805997,
+    "group": "normal"
+  },
+  "798711873036": {
+    "popularity_weight": 0.4240772223660921,
+    "elasticity": 2.406829017257458,
+    "group": "normal"
+  },
+  "798711873043": {
+    "popularity_weight": 2.933198610298755,
+    "elasticity": 1.3346791671892855,
+    "group": "normal"
+  },
+  "798711873050": {
+    "popularity_weight": 0.7372704289260207,
+    "elasticity": -1.0135094202753065,
+    "group": "inverted"
+  },
+  "798711873074": {
+    "popularity_weight": 1.118602788082031,
+    "elasticity": 1.415024910557848,
+    "group": "normal"
+  },
+  "798711873081": {
+    "popularity_weight": 2.877716074331177,
+    "elasticity": 1.1460490051954655,
+    "group": "normal"
+  },
+  "798711873098": {
+    "popularity_weight": 2.8596387996712194,
+    "elasticity": 1.9870250495076929,
+    "group": "normal"
+  },
+  "798711873104": {
+    "popularity_weight": 1.2472904248168317,
+    "elasticity": 1.7364263119045389,
+    "group": "normal"
+  },
+  "798711873111": {
+    "popularity_weight": 1.0930450818055677,
+    "elasticity": -0.6306051822737482,
+    "group": "inverted"
+  },
+  "798711873128": {
+    "popularity_weight": 0.9347780816069053,
+    "elasticity": 1.647238358002232,
+    "group": "normal"
+  },
+  "798711873135": {
+    "popularity_weight": 1.9757397969162163,
+    "elasticity": 2.2190307074803806,
+    "group": "normal"
+  },
+  "798711873142": {
+    "popularity_weight": 1.1370159061786074,
+    "elasticity": 0.0016481783185788024,
+    "group": "insensitive"
+  },
+  "798711873166": {
+    "popularity_weight": 0.1929862920036774,
+    "elasticity": 2.388222269260284,
+    "group": "normal"
+  },
+  "801561962611": {
+    "popularity_weight": 1.068840285110494,
+    "elasticity": 1.3075449446120042,
+    "group": "normal"
+  },
+  "802975057504": {
+    "popularity_weight": 0.9813887124884285,
+    "elasticity": 1.3867107008781128,
+    "group": "normal"
+  },
+  "802975668427": {
+    "popularity_weight": 1.1919233576314905,
+    "elasticity": 1.3470214953893636,
+    "group": "normal"
+  },
+  "810029930147": {
+    "popularity_weight": 0.20410403169079602,
+    "elasticity": 1.1970561582984183,
+    "group": "normal"
+  },
+  "810099020465": {
+    "popularity_weight": 3.602871778427663,
+    "elasticity": 1.4563338792346698,
+    "group": "normal"
+  },
+  "810296024082": {
+    "popularity_weight": 4.095624255279973,
+    "elasticity": -1.2570070255753647,
+    "group": "inverted"
+  },
+  "810296024419": {
+    "popularity_weight": 0.23781990944400738,
+    "elasticity": 2.2784905327157663,
+    "group": "normal"
+  },
+  "810296024525": {
+    "popularity_weight": 2.807358601180977,
+    "elasticity": 1.576777726606212,
+    "group": "normal"
+  },
+  "811709021261": {
+    "popularity_weight": 1.7897817124268482,
+    "elasticity": 1.062414071911633,
+    "group": "normal"
+  },
+  "812658011594": {
+    "popularity_weight": 0.21662495458231754,
+    "elasticity": 1.9775978175976996,
+    "group": "normal"
+  },
+  "813048015154": {
+    "popularity_weight": 4.761965216579231,
+    "elasticity": 0.07186843683365332,
+    "group": "insensitive"
+  },
+  "814002012042": {
+    "popularity_weight": 0.7625298289969805,
+    "elasticity": 2.0909830758684183,
+    "group": "normal"
+  },
+  "817024012564": {
+    "popularity_weight": 1.9603301280481091,
+    "elasticity": 1.8773713089273452,
+    "group": "normal"
+  },
+  "817713010925": {
+    "popularity_weight": 2.8123766578176004,
+    "elasticity": 2.335820905485826,
+    "group": "normal"
+  },
+  "817713012615": {
+    "popularity_weight": 0.6002997141273189,
+    "elasticity": 1.702982740852892,
+    "group": "normal"
+  },
+  "819302010644": {
+    "popularity_weight": 1.633306395587302,
+    "elasticity": 0.9342461961219909,
+    "group": "normal"
+  },
+  "840176080457": {
+    "popularity_weight": 4.506892458016277,
+    "elasticity": 2.3518093272400433,
+    "group": "normal"
+  },
+  "841631120695": {
+    "popularity_weight": 0.3596658083731132,
+    "elasticity": 1.234055403870562,
+    "group": "normal"
+  },
+  "842776114259": {
+    "popularity_weight": 0.3883234554648562,
+    "elasticity": 1.7988718987149164,
+    "group": "normal"
+  },
+  "842776114617": {
+    "popularity_weight": 1.4515424321551171,
+    "elasticity": 2.237016672742418,
+    "group": "normal"
+  },
+  "842776114808": {
+    "popularity_weight": 0.47012915489007007,
+    "elasticity": 1.2032496932768768,
+    "group": "normal"
+  },
+  "846292000102": {
+    "popularity_weight": 1.2984498188611562,
+    "elasticity": -1.557153869175096,
+    "group": "inverted"
+  },
+  "847181000418": {
+    "popularity_weight": 0.448357112497325,
+    "elasticity": 2.065937029981053,
+    "group": "normal"
+  },
+  "848891008381": {
+    "popularity_weight": 0.9486450546391457,
+    "elasticity": 2.1580622031629177,
+    "group": "normal"
+  },
+  "848958015475": {
+    "popularity_weight": 1.2907555861125442,
+    "elasticity": 1.855514977321517,
+    "group": "normal"
+  },
+  "848958016885": {
+    "popularity_weight": 2.6737688329756115,
+    "elasticity": 2.225173098836278,
+    "group": "normal"
+  },
+  "848958018261": {
+    "popularity_weight": 7.767053432388896,
+    "elasticity": 1.3251859027194812,
+    "group": "normal"
+  },
+  "848958020080": {
+    "popularity_weight": 0.8046714875637582,
+    "elasticity": 0.9532267387685722,
+    "group": "normal"
+  },
+  "848958020257": {
+    "popularity_weight": 0.28571686798518064,
+    "elasticity": 1.0246716561695322,
+    "group": "normal"
+  },
+  "848958023111": {
+    "popularity_weight": 8.449589635620342,
+    "elasticity": 2.3529278566188845,
+    "group": "normal"
+  },
+  "848958023272": {
+    "popularity_weight": 1.9871546510022349,
+    "elasticity": 1.61914131078536,
+    "group": "normal"
+  },
+  "848958024507": {
+    "popularity_weight": 6.469802022430435,
+    "elasticity": 0.9957885026645911,
+    "group": "normal"
+  },
+  "848958025184": {
+    "popularity_weight": 0.37154985832033177,
+    "elasticity": 1.7121729240574006,
+    "group": "normal"
+  },
+  "848958025191": {
+    "popularity_weight": 0.8078556084112225,
+    "elasticity": 1.7937521558086824,
+    "group": "normal"
+  },
+  "848958025245": {
+    "popularity_weight": 0.4541866341717488,
+    "elasticity": 2.3031992368652485,
+    "group": "normal"
+  },
+  "848958025276": {
+    "popularity_weight": 3.0611703942406003,
+    "elasticity": 0.9074689699723323,
+    "group": "normal"
+  },
+  "848958025320": {
+    "popularity_weight": 0.5968084880266938,
+    "elasticity": 2.4086446058993087,
+    "group": "normal"
+  },
+  "848958029175": {
+    "popularity_weight": 0.5513801413177594,
+    "elasticity": 2.308340824498454,
+    "group": "normal"
+  },
+  "848958029496": {
+    "popularity_weight": 0.3571516157839828,
+    "elasticity": 2.0633382065893917,
+    "group": "normal"
+  },
+  "848958029854": {
+    "popularity_weight": 3.2720274060095713,
+    "elasticity": 1.0626889340967196,
+    "group": "normal"
+  },
+  "848958038849": {
+    "popularity_weight": 0.8642792148178465,
+    "elasticity": 1.493797005686091,
+    "group": "normal"
+  },
+  "848958038948": {
+    "popularity_weight": 0.6982827233656411,
+    "elasticity": -0.7168247100410681,
+    "group": "inverted"
+  },
+  "848958038986": {
+    "popularity_weight": 22.163934759733703,
+    "elasticity": 1.4768373926654341,
+    "group": "normal"
+  },
+  "848958038993": {
+    "popularity_weight": 0.5795083963559396,
+    "elasticity": 1.5730195265698792,
+    "group": "normal"
+  },
+  "853207006432": {
+    "popularity_weight": 2.0165873000531005,
+    "elasticity": 0.8363076730518301,
+    "group": "normal"
+  },
+  "855434003048": {
+    "popularity_weight": 1.7956827946942295,
+    "elasticity": 1.7597825590435376,
+    "group": "normal"
+  },
+  "855434003062": {
+    "popularity_weight": 0.5617628097356447,
+    "elasticity": -0.03428808931355391,
+    "group": "insensitive"
+  },
+  "855774004330": {
+    "popularity_weight": 0.5322931977940681,
+    "elasticity": 1.096645105532369,
+    "group": "normal"
+  },
+  "855774004439": {
+    "popularity_weight": 1.290783423112288,
+    "elasticity": 2.1429739291990817,
+    "group": "normal"
+  },
+  "858160003252": {
+    "popularity_weight": 0.549713288434664,
+    "elasticity": 0.8890783303640001,
+    "group": "normal"
+  },
+  "858584004026": {
+    "popularity_weight": 2.1978901192295615,
+    "elasticity": 1.6096181412195256,
+    "group": "normal"
+  },
+  "858603004679": {
+    "popularity_weight": 2.41536523576235,
+    "elasticity": 1.6565257726358964,
+    "group": "normal"
+  },
+  "858603004686": {
+    "popularity_weight": 1.063018031623882,
+    "elasticity": -1.9087618887582414,
+    "group": "inverted"
+  },
+  "859109012755": {
+    "popularity_weight": 0.9472124690042445,
+    "elasticity": 1.633457052045183,
+    "group": "normal"
+  },
+  "859109020217": {
+    "popularity_weight": 0.19158969680336538,
+    "elasticity": 1.2675271992485204,
+    "group": "normal"
+  },
+  "859109020224": {
+    "popularity_weight": 1.5760662896485964,
+    "elasticity": 2.49086718496357,
+    "group": "normal"
+  },
+  "859109020231": {
+    "popularity_weight": 1.0902024338001837,
+    "elasticity": 0.9686033848543714,
+    "group": "normal"
+  },
+  "859109020248": {
+    "popularity_weight": 8.30080038556371,
+    "elasticity": 2.107236641178056,
+    "group": "normal"
+  },
+  "859109020255": {
+    "popularity_weight": 1.5439917658765767,
+    "elasticity": 1.1884390764197934,
+    "group": "normal"
+  },
+  "859109020279": {
+    "popularity_weight": 0.6344159811561699,
+    "elasticity": 0.9616459267685725,
+    "group": "normal"
+  },
+  "859109020309": {
+    "popularity_weight": 0.7134487571834134,
+    "elasticity": 1.0594861721068305,
+    "group": "normal"
+  },
+  "859109020378": {
+    "popularity_weight": 2.959614791412514,
+    "elasticity": 1.754696903786523,
+    "group": "normal"
+  },
+  "859109020392": {
+    "popularity_weight": 0.7410784395232084,
+    "elasticity": 1.9310788840049562,
+    "group": "normal"
+  },
+  "859109020415": {
+    "popularity_weight": 1.2701237062248014,
+    "elasticity": 1.1616559696424105,
+    "group": "normal"
+  },
+  "859109020422": {
+    "popularity_weight": 1.3660865969390537,
+    "elasticity": 2.237134811622287,
+    "group": "normal"
+  },
+  "859109020439": {
+    "popularity_weight": 0.4225862377504539,
+    "elasticity": 2.1722763309589856,
+    "group": "normal"
+  },
+  "859109020477": {
+    "popularity_weight": 3.5689816913831613,
+    "elasticity": 0.8446315134710918,
+    "group": "normal"
+  },
+  "859109020484": {
+    "popularity_weight": 0.6452650498648642,
+    "elasticity": 1.3252739710108474,
+    "group": "normal"
+  },
+  "859109020491": {
+    "popularity_weight": 3.73137886595666,
+    "elasticity": 1.0411869120571566,
+    "group": "normal"
+  },
+  "859109020507": {
+    "popularity_weight": 1.2362927129208723,
+    "elasticity": 1.1657258960569687,
+    "group": "normal"
+  },
+  "859109020514": {
+    "popularity_weight": 0.828784357065942,
+    "elasticity": 2.026713145162544,
+    "group": "normal"
+  },
+  "859109020521": {
+    "popularity_weight": 2.6871602843140945,
+    "elasticity": 0.8894350049233871,
+    "group": "normal"
+  },
+  "859109020545": {
+    "popularity_weight": 0.25054894395322574,
+    "elasticity": 1.2625748340285723,
+    "group": "normal"
+  },
+  "859109020569": {
+    "popularity_weight": 1.6259924486049697,
+    "elasticity": 1.2643836354201081,
+    "group": "normal"
+  },
+  "859109020576": {
+    "popularity_weight": 1.559213404261472,
+    "elasticity": 1.281518999136764,
+    "group": "normal"
+  },
+  "859109020606": {
+    "popularity_weight": 1.7105336661820383,
+    "elasticity": 0.8772095164275269,
+    "group": "normal"
+  },
+  "859109020613": {
+    "popularity_weight": 0.6679141496846935,
+    "elasticity": 1.3124129154313424,
+    "group": "normal"
+  },
+  "859109020620": {
+    "popularity_weight": 0.5964464805950711,
+    "elasticity": 1.35780800509433,
+    "group": "normal"
+  },
+  "859109021139": {
+    "popularity_weight": 0.4458013693150128,
+    "elasticity": 1.6504459891455623,
+    "group": "normal"
+  },
+  "885909950942": {
+    "popularity_weight": 1.3154669004918444,
+    "elasticity": 1.510079731733917,
+    "group": "normal"
+  },
+  "886511232617": {
+    "popularity_weight": 0.2562068647156282,
+    "elasticity": 2.214444052221902,
+    "group": "normal"
+  },
+  "886598036061": {
+    "popularity_weight": 2.019607437729505,
+    "elasticity": 1.6907363231010737,
+    "group": "normal"
+  },
+  "886598038751": {
+    "popularity_weight": 0.7918922323882875,
+    "elasticity": 1.3662166582383244,
+    "group": "normal"
+  },
+  "886598039123": {
+    "popularity_weight": 0.3510817897306697,
+    "elasticity": 1.6669185059490523,
+    "group": "normal"
+  },
+  "886598039130": {
+    "popularity_weight": 2.6202799320069525,
+    "elasticity": 2.1922126225922485,
+    "group": "normal"
+  },
+  "886598042208": {
+    "popularity_weight": 1.890583385819433,
+    "elasticity": 1.1353620648007716,
+    "group": "normal"
+  },
+  "886598045483": {
+    "popularity_weight": 1.9335305130654905,
+    "elasticity": 1.1011484192102896,
+    "group": "normal"
+  },
+  "886598045513": {
+    "popularity_weight": 2.2996184964324327,
+    "elasticity": 2.0917911543331726,
+    "group": "normal"
+  },
+  "887276029375": {
+    "popularity_weight": 0.35341071968114773,
+    "elasticity": 1.880007142403009,
+    "group": "normal"
+  },
+  "887276154367": {
+    "popularity_weight": 4.121579123866411,
+    "elasticity": 1.0566275823682307,
+    "group": "normal"
+  },
+  "887276169415": {
+    "popularity_weight": 0.3027072877524631,
+    "elasticity": 1.2669452347264707,
+    "group": "normal"
+  },
+  "887276169439": {
+    "popularity_weight": 0.2488441554401532,
+    "elasticity": 1.5682535682911598,
+    "group": "normal"
+  },
+  "887276248639": {
+    "popularity_weight": 4.157329052020759,
+    "elasticity": 1.586609820176363,
+    "group": "normal"
+  },
+  "887276352831": {
+    "popularity_weight": 1.4960603190101431,
+    "elasticity": -0.010053259269818746,
+    "group": "insensitive"
+  },
+  "887276367712": {
+    "popularity_weight": 3.9508137305913253,
+    "elasticity": 1.6085693475032181,
+    "group": "normal"
+  },
+  "887276368221": {
+    "popularity_weight": 0.4290692669428707,
+    "elasticity": 1.0933501494418203,
+    "group": "normal"
+  },
+  "887276368696": {
+    "popularity_weight": 0.5002124843520951,
+    "elasticity": 1.6886716599514275,
+    "group": "normal"
+  },
+  "887276395968": {
+    "popularity_weight": 0.43165340199282903,
+    "elasticity": 1.4949079753204444,
+    "group": "normal"
+  },
+  "887276397542": {
+    "popularity_weight": 0.5376150166542653,
+    "elasticity": 1.9004191068478218,
+    "group": "normal"
+  },
+  "887276397887": {
+    "popularity_weight": 1.4692239681696,
+    "elasticity": 1.9161589468978124,
+    "group": "normal"
+  },
+  "887276398105": {
+    "popularity_weight": 0.5397739304547297,
+    "elasticity": 1.3946953388109353,
+    "group": "normal"
+  },
+  "887276398112": {
+    "popularity_weight": 0.6623714525002773,
+    "elasticity": -0.038083622516807816,
+    "group": "insensitive"
+  },
+  "887276398129": {
+    "popularity_weight": 0.4009498717239083,
+    "elasticity": 1.9391978799910283,
+    "group": "normal"
+  },
+  "887276410463": {
+    "popularity_weight": 6.988845653170333,
+    "elasticity": 1.694868677548096,
+    "group": "normal"
+  },
+  "887276434766": {
+    "popularity_weight": 1.4784855928570961,
+    "elasticity": 1.4164160372694754,
+    "group": "normal"
+  },
+  "887276441016": {
+    "popularity_weight": 0.5335364727933353,
+    "elasticity": -0.0027458158254545506,
+    "group": "insensitive"
+  },
+  "887276458687": {
+    "popularity_weight": 0.6128980045714778,
+    "elasticity": 2.2355282607660016,
+    "group": "normal"
+  },
+  "887276984629": {
+    "popularity_weight": 0.3409233294406238,
+    "elasticity": 1.0227833704301637,
+    "group": "normal"
+  },
+  "888863293971": {
+    "popularity_weight": 0.7967576067938413,
+    "elasticity": 2.1108662833426806,
+    "group": "normal"
+  },
+  "888863299201": {
+    "popularity_weight": 1.7714762983898602,
+    "elasticity": 1.498459639544107,
+    "group": "normal"
+  },
+  "889063011051": {
+    "popularity_weight": 1.429219974041386,
+    "elasticity": 1.284377485357709,
+    "group": "normal"
+  },
+  "889063505369": {
+    "popularity_weight": 2.0063982706662307,
+    "elasticity": 1.3260954241567424,
+    "group": "normal"
+  },
+  "9010477884813": {
+    "popularity_weight": 2.4532263509348704,
+    "elasticity": 1.4253296289825559,
+    "group": "normal"
+  },
+  "9010477884844": {
+    "popularity_weight": 0.9209251341203084,
+    "elasticity": 1.6966816403845204,
     "group": "normal"
   }
 }

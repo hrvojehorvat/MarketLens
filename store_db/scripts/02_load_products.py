@@ -1,8 +1,13 @@
-"""Load the 84 real products from catalog_sourcing into the products table.
+"""Load the real products from catalog_sourcing into the products table.
 
 category_top is the first segment of the ">"-delimited category path. A handful of
 source records have an empty category (all gaming headsets) -- those fall back to
 "Electronics", which is what they clearly are, rather than leaving category NULL.
+
+A few records carry an "ean" (European Article Number -- the 13-digit international
+barcode standard, a superset of the 12-digit UPC) instead of a "upc" -- items the
+API only had a non-US barcode for. We use that as the products.upc value instead;
+the column is really just "the barcode", regardless of which standard it follows.
 """
 
 import json
@@ -30,18 +35,19 @@ def load_records():
 def main() -> None:
     rows = []
     for rec in load_records():
+        upc = rec.get("upc") or str(rec["ean"])
         category = rec["category"].strip() or FALLBACK_CATEGORY
         category_top = category.split(">")[0].strip() or FALLBACK_CATEGORY
 
         attributes = {
             k: v
             for k, v in rec.items()
-            if k not in {"category", "offers", "upc", "title", "brand"}
+            if k not in {"category", "offers", "upc", "ean", "title", "brand"}
         }
 
         rows.append(
             (
-                rec["upc"],
+                upc,
                 rec["title"],
                 rec.get("brand") or None,
                 category,
