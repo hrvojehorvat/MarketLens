@@ -1,0 +1,52 @@
+services:
+  kafka:
+    image: apache/kafka:3.9.0 # official image, KRaft mode (Kafka's own Raft-based
+    # consensus for metadata — no separate ZooKeeper service needed)
+    ports:
+      - "9094:9092" # host 9094: 9092 is already taken by an unrelated local container
+    environment:
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: broker,controller
+      # Two listeners: PLAINTEXT_HOST is what producers/consumers on the host
+      # machine (uv run, Jupyter) connect to; PLAINTEXT_INTERNAL is what kafka-ui
+      # uses from inside the Docker network, where "localhost" would mean the
+      # kafka-ui container itself, not the broker.
+      KAFKA_LISTENERS: PLAINTEXT_HOST://:9092,PLAINTEXT_INTERNAL://:29092,CONTROLLER://:9093
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT_HOST://localhost:9094,PLAINTEXT_INTERNAL://kafka:29092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT_HOST:PLAINTEXT,PLAINTEXT_INTERNAL:PLAINTEXT,CONTROLLER:PLAINTEXT
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT_INTERNAL
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@localhost:9093
+      # Single-broker cluster: these internal topics default to replication
+      # factor 3, which can never be satisfied with only 1 broker -- that
+      # silently blocks __consumer_offsets from ever being created, which in
+      # turn means no consumer group can ever find its coordinator.
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      # This image's actual default log.dirs is /tmp/kraft-combined-logs, not
+      # /var/lib/kafka/data -- mounting the volume at the wrong path meant it
+      # was never really persisting anything. Pointing log.dirs at the mounted
+      # path is what makes topics/messages survive a container recreate.
+      KAFKA_LOG_DIRS: /var/lib/kafka/data
+    volumes:
+      - streaming_kafka_data:/var/lib/kafka/data
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/kafka/bin/kafka-broker-api-versions.sh --bootstrap-server localhost:9092 || exit 1"]
+      interval: 10s
+      timeout: 10s
+      retries: 10
+
+  kafka-ui: # web GUI (Provectus) to browse topics/partitions/messages visually
+    image: provectuslabs/kafka-ui:latest
+    ports:
+      - "8089:8080"
+    environment:
+      KAFKA_CLUSTERS_0_NAME: marketlens
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:29092
+    depends_on:
+      kafka:
+        condition: service_healthy
+
+volumes:
+  streaming_kafka_data:
