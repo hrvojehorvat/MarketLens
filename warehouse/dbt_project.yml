@@ -1,0 +1,24 @@
+name: "warehouse"
+version: "1.0.0"
+config-version: 2
+profile: "warehouse"
+
+model-paths: ["models"]
+clean-targets: ["target", "dbt_packages"]
+
+# Bronze itself isn't a dbt model -- it's just the raw Parquet (a columnar file
+# format good for analytics) that ../streaming/consumers/bronze_writer.py already
+# writes. This points every silver model at where to read it from.
+vars:
+  bronze_dir: "../streaming/data/bronze"
+
+models:
+  warehouse:
+    silver:
+      # Cheap to recompute each run, and these are source-of-truth cleaned reads --
+      # no reason to materialize them as tables.
+      +materialized: view
+    gold:
+      # Aggregated, queried repeatedly, and OK to be a little stale between runs --
+      # worth paying the build cost once instead of recomputing on every read.
+      +materialized: table

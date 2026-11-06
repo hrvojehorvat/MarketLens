@@ -5,3 +5,6 @@ __pycache__/
 .env
 .DS_Store
 streaming/data/bronze/
+warehouse/*.duckdb
+warehouse/target/
+warehouse/logs/

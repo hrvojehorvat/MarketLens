@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: gold_daily_revenue
+    description: Orders and revenue per day.
+
+  - name: gold_price_elasticity
+    description: >
+      Units sold and revenue per product per day, joined to the price that
+      was actually in effect that day -- a feature set for later price
+      elasticity analysis.
+
+  - name: gold_inventory_turnover
+    description: Total restocked vs. total sold per product, as a turnover ratio.
+
+  - name: gold_return_rate
+    description: Return rate and total refunded amount per product.
+
+  - name: gold_review_ratings
+    description: Review count and average rating per product.

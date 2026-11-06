@@ -1,0 +1,56 @@
+version: 2
+
+models:
+  - name: silver_orders
+    description: One row per order line item, unnested from bronze's orders.placed.
+    columns:
+      - name: order_id
+        tests: [not_null]
+      - name: product_upc
+        tests: [not_null]
+
+  - name: silver_payments
+    description: One row per payment.
+    columns:
+      - name: payment_id
+        tests: [unique, not_null]
+
+  - name: silver_shipments
+    description: One row per shipment status change (shipped, delivered).
+    columns:
+      - name: shipment_id
+        tests: [not_null]
+      - name: status
+        tests: [not_null]
+
+  - name: silver_price_history
+    description: >
+      One row per price ever set on a product, with effective_to derived so
+      callers can find the price active on a given date without a subquery.
+    columns:
+      - name: price_history_id
+        tests: [unique, not_null]
+
+  - name: silver_inventory_restocks
+    description: One row per consignment line item received into stock.
+    columns:
+      - name: consignment_item_id
+        tests: [unique, not_null]
+
+  - name: silver_returns
+    description: One row per filed return.
+    columns:
+      - name: return_id
+        tests: [unique, not_null]
+
+  - name: silver_reviews
+    description: One row per posted review.
+    columns:
+      - name: review_id
+        tests: [unique, not_null]
+
+  - name: silver_products
+    description: Product/category reference data, read directly from store_db.
+    columns:
+      - name: product_upc
+        tests: [unique, not_null]

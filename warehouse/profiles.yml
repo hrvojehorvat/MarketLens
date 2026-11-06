@@ -1,0 +1,20 @@
+warehouse:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: warehouse.duckdb
+      extensions:
+        - postgres
+      # Attaches store_db's Postgres directly (DuckDB's postgres extension) so
+      # silver_products can read real product/category data instead of needing
+      # its own copy -- the same store_db ../streaming/producers already reuse.
+      attach:
+        - path: >-
+            host={{ env_var('POSTGRES_HOST', 'localhost') }}
+            port={{ env_var('POSTGRES_PORT', '5438') }}
+            dbname={{ env_var('POSTGRES_DB', 'store_db') }}
+            user={{ env_var('POSTGRES_USER', 'store_admin') }}
+            password={{ env_var('POSTGRES_PASSWORD') }}
+          type: postgres
+          alias: pg
