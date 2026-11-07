@@ -10,7 +10,7 @@ select
     order_id,
     order_item_id,
     reason,
-    refund_amount,
+    cast(refund_amount as double) as refund_amount,
     cast(returned_at as timestamp) as returned_at
 from deduped
 where rn = 1
