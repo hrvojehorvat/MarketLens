@@ -12,7 +12,7 @@ latest as (
     select
         price_history_id,
         product_upc,
-        price,
+        cast(price as double) as price,
         cast(effective_from as date) as effective_from
     from deduped
     where rn = 1

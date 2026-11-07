@@ -13,7 +13,7 @@ select
     merchant_id,
     product_upc,
     quantity,
-    unit_cost,
+    cast(unit_cost as double) as unit_cost,
     cast(received_date as date) as received_date
 from deduped
 where rn = 1
