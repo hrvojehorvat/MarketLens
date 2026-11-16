@@ -8,3 +8,4 @@ streaming/data/bronze/
 warehouse/*.duckdb
 warehouse/target/
 warehouse/logs/
+orchestration/logs/

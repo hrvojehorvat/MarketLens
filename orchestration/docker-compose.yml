@@ -1,0 +1,116 @@
+x-airflow-common:
+  &airflow-common
+  build: . # custom image: apache/airflow + dbt-duckdb (see Dockerfile)
+  environment:
+    &airflow-common-env
+    AIRFLOW__CORE__EXECUTOR: LocalExecutor # runs tasks as local subprocesses of the
+    # scheduler -- no Celery/Redis broker needed for a single-machine setup
+    AIRFLOW__CORE__AUTH_MANAGER: airflow.providers.fab.auth_manager.fab_auth_manager.FabAuthManager
+    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
+    # Airflow 3 moved task execution behind an HTTP API served by the api-server
+    # (tasks no longer talk to the metadata DB directly) -- every component needs
+    # this URL regardless of executor.
+    AIRFLOW__CORE__EXECUTION_API_SERVER_URL: http://airflow-apiserver:8080/execution/
+    AIRFLOW__CORE__FERNET_KEY: ${AIRFLOW__CORE__FERNET_KEY:-}
+    AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: "true"
+    AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+    AIRFLOW__SCHEDULER__ENABLE_HEALTH_CHECK: "true"
+  volumes:
+    - ./dags:/opt/airflow/dags
+    - ./logs:/opt/airflow/logs
+    # Whole repo root, one mount -- so warehouse/dbt_project.yml's relative
+    # bronze_dir ("../streaming/data/bronze") resolves the same way inside the
+    # container as it does on the host.
+    - ..:/opt/airflow/project
+  user: "${AIRFLOW_UID:-50000}:0"
+  extra_hosts:
+    - "host.docker.internal:host-gateway" # no-op on Docker Desktop (already built
+    # in); makes the same hostname work on Linux Docker too
+  depends_on:
+    &airflow-common-depends-on
+    postgres:
+      condition: service_healthy
+
+services:
+  postgres: # Airflow's own metadata DB (DAG runs, task state) -- separate from
+    # store_db's app database, no published host port, nothing outside this
+    # stack needs to reach it
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    volumes:
+      - orchestration_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "airflow"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
+    restart: always
+
+  airflow-init: # one-shot: migrate the metadata DB schema, create the admin user, then exit
+    <<: *airflow-common
+    entrypoint: /bin/bash
+    command:
+      - -c
+      - |
+        mkdir -p /opt/airflow/logs /opt/airflow/dags
+        airflow db migrate
+        airflow users create \
+          --username "${_AIRFLOW_WWW_USER_USERNAME:-admin}" \
+          --password "${_AIRFLOW_WWW_USER_PASSWORD:-changeme}" \
+          --firstname Admin --lastname User --role Admin \
+          --email admin@example.com || true
+    user: "0:0"
+
+  airflow-apiserver: # serves the web UI + the task execution API, at host port 8090
+    <<: *airflow-common
+    command: api-server
+    ports:
+      - "8090:8080" # placeholder port -- check `docker ps`/`lsof -i :8090` for local conflicts
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8080/api/v2/version"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    restart: always
+    depends_on:
+      <<: *airflow-common-depends-on
+      airflow-init:
+        condition: service_completed_successfully
+
+  airflow-scheduler: # also where LocalExecutor actually runs task subprocesses (e.g. the dbt bash tasks)
+    <<: *airflow-common
+    command: scheduler
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8974/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    restart: always
+    depends_on:
+      <<: *airflow-common-depends-on
+      airflow-init:
+        condition: service_completed_successfully
+
+  airflow-dag-processor: # Airflow 3 split DAG-file parsing out of the scheduler into its own process
+    <<: *airflow-common
+    command: dag-processor
+    healthcheck:
+      test: ["CMD-SHELL", 'airflow jobs check --job-type DagProcessorJob --hostname "$${HOSTNAME}"']
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    restart: always
+    depends_on:
+      <<: *airflow-common-depends-on
+      airflow-init:
+        condition: service_completed_successfully
+
+volumes:
+  orchestration_pgdata:
